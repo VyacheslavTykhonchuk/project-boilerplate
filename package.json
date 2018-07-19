@@ -20,6 +20,7 @@
         "ttf2woff2": "latest"
     },
     "dependencies": {
+        "gulp-uglify-es": "^1.0.4",
         "masonry-layout": "^4.2.2"
     }
 }

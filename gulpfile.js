@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     cssnano = require('gulp-cssnano'),
     concat = require('gulp-concat'),
-    uglify = require('gulp-uglify'),
+    uglify = require('gulp-uglify-es').default,
     rename = require('gulp-rename'),
     watch = require('gulp-watch'),
     runTimestamp = Math.round(Date.now() / 1000);
@@ -61,7 +61,7 @@ gulp.task('sass', function () {
 gulp.task('scripts', function () {
     gulp.src(source.js)
         .pipe(concat('scripts.min.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/assets/js'))
         .pipe(livereload({ start: true }));
 });
